@@ -1,9 +1,13 @@
 
 var express = require('express');
 var router = express.Router();
-var motrans = require('../controllers/insert')
+var insert = require('../controllers/insert')
+var find = require('../controllers/find')
 
 /* GET home page. */
-router.get('/', motrans.buscar);
+router.post('/buscar', find.buscar);
+router.post('/inserir', insert.inserir);
+router.post('/alterar', find.alterar);
+router.post('/remover', find.remover);
 
 module.exports = router;
